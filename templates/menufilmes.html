@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Filmes</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <center>
+    <img src="{% static 'images/filmes.png' %}"/>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Gênero</th>
+            </tr>
+        </thead>
+        <tbody>
+         {% for fil in filmes_all %}
+            <tr>
+                <td><a href="{% url 'filmes' fil.id %}">{{ fil.titulo }}</a></td>
+                <td>{{ fil.genero }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+    </table>
+    </center>
+</body>
+</html>

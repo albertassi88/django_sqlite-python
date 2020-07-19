@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Filmes</title>
+    <link rel="stylesheet" href="{% static 'css/estilos.css'%}">
+</head>
+<body>
+    <h3>Filmes</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Gênero</th>
+                <th>Elenco</th>
+                <th>Sinopse</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="{% url 'menufilmes' %}">{{ filmeid.titulo }}</a></td>
+                <td>{{ filmeid.genero }}</td>
+                <td>{{ filmeid.elenco }}</td>
+                <td>{{ filmeid.sinopse }}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+
+
+
+
